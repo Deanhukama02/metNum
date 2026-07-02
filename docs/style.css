@@ -1,0 +1,785 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+--bg:#050816;
+--card:rgba(255,255,255,.08);
+--border:rgba(255,255,255,.12);
+
+--cyan:#22d3ee;
+--blue:#3b82f6;
+--violet:#8b5cf6;
+--pink:#ec4899;
+
+--text:#ffffff;
+--gray:#b6bcc8;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--bg);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+z-index:-2;
+
+background:
+
+radial-gradient(circle at 15% 20%,#06b6d4 0%,transparent 28%),
+
+radial-gradient(circle at 85% 10%,#8b5cf6 0%,transparent 32%),
+
+radial-gradient(circle at 50% 90%,#2563eb 0%,transparent 30%),
+
+#050816;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:450px;
+
+height:450px;
+
+background:#9333ea;
+
+filter:blur(140px);
+
+opacity:.22;
+
+right:-120px;
+
+top:-120px;
+
+animation:float 10s infinite ease-in-out;
+
+z-index:-1;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(50px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.container{
+
+width:min(1200px,90%);
+
+margin:auto;
+
+}
+
+.glass{
+
+    background:rgba(255,255,255,.06);
+    
+    backdrop-filter:blur(22px);
+    
+    -webkit-backdrop-filter:blur(22px);
+    
+    border:1px solid rgba(255,255,255,.1);
+    
+    box-shadow:
+    
+    0 20px 40px rgba(0,0,0,.35);
+    
+    transition:.35s;
+    
+    }
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+padding:16px 34px;
+
+border-radius:999px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(90deg,var(--cyan),var(--blue));
+
+color:white;
+
+}
+
+.btn-secondary{
+
+background:linear-gradient(90deg,var(--violet),var(--pink));
+
+color:white;
+
+}
+
+button:hover{
+
+    transform:translateY(-5px) scale(1.02);
+    
+    box-shadow:
+    
+    0 20px 40px rgba(6,182,212,.35);
+    
+    }
+
+.card{
+
+border-radius:28px;
+
+padding:28px;
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+input{
+
+transition:.35s;
+
+width:100%;
+
+padding:15px 18px;
+
+border-radius:15px;
+
+border:none;
+
+outline:none;
+
+background:#111827;
+
+color:white;
+
+font-size:15px;
+
+}
+
+input:focus{
+
+    box-shadow:
+
+    0 0 25px rgba(6,182,212,.35);
+
+outline:2px solid var(--cyan);
+
+}
+
+.title{
+
+font-size:52px;
+
+font-weight:800;
+
+line-height:1.1;
+
+background:linear-gradient(90deg,#22d3ee,#8b5cf6,#ec4899);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.subtitle{
+
+color:var(--gray);
+
+line-height:1.8;
+
+}
+
+.grid{
+
+display:grid;
+
+gap:28px;
+
+}
+
+.grid-2{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.grid-3{
+
+grid-template-columns:1fr 1fr 1fr;
+
+}
+
+@media(max-width:900px){
+
+.grid-2{
+
+grid-template-columns:1fr;
+
+}
+
+.grid-3{
+
+grid-template-columns:1fr;
+
+}
+
+.title{
+
+font-size:40px;
+
+}
+
+}
+
+.fadeUp{
+
+    animation:fadeUp .7s ease;
+    
+    }
+    
+    @keyframes fadeUp{
+    
+    from{
+    
+    opacity:0;
+    
+    transform:translateY(40px);
+    
+    }
+    
+    to{
+    
+    opacity:1;
+    
+    transform:translateY(0);
+    
+    }
+    
+    }
+    
+.menuItem{
+
+    width:55px;
+        
+    height:55px;
+        
+    display:flex;
+        
+    justify-content:center;
+        
+    align-items:center;
+        
+    border-radius:18px;
+        
+    font-size:22px;
+        
+    background:rgba(255,255,255,.05);
+        
+    color:white;
+        
+transition:.35s;
+        
+    }
+        
+        .menuItem:hover{
+        
+        background:linear-gradient(90deg,#06b6d4,#8b5cf6);
+        
+        transform:translateY(-6px);
+        
+        box-shadow:0 15px 25px rgba(0,0,0,.35);
+        
+        }
+
+
+        button{
+
+            overflow:hidden;
+            
+            position:relative;
+            
+            }
+            
+            button::after{
+            
+            content:"";
+            
+            position:absolute;
+            
+            width:20px;
+            
+            height:20px;
+            
+            background:white;
+            
+            opacity:.25;
+            
+            border-radius:999px;
+            
+            transform:scale(0);
+            
+            transition:.5s;
+            
+            }
+            
+            button:active::after{
+            
+            transform:scale(18);
+            
+            opacity:0;
+            
+            }
+
+            canvas{
+
+                padding:20px;
+                
+                background:#0f172a;
+                
+                border-radius:25px;
+                
+                }
+                .card{
+
+                    position:relative;
+                    
+                    overflow:hidden;
+                    
+                    }
+                    
+                    .card::before{
+                    
+                    content:"";
+                    
+                    position:absolute;
+                    
+                    width:180px;
+                    
+                    height:180px;
+                    
+                    background:linear-gradient(
+                    
+                    90deg,
+                    
+                    #06b6d4,
+                    
+                    #8b5cf6
+                    
+                    );
+                    
+                    filter:blur(70px);
+                    
+                    opacity:.18;
+                    
+                    right:-50px;
+                    
+                    top:-50px;
+                    
+                    }
+                    body{
+
+                        background-image:
+                        
+                        linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+                        
+                        linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+                        
+                        background-size:45px 45px;
+                        
+                        }          
+              .cursorGlow{
+
+                            position:fixed;
+                            
+                            width:350px;
+                            
+                            height:350px;
+                            
+                            border-radius:999px;
+                            
+                            pointer-events:none;
+                            
+                            filter:blur(120px);
+                            
+                            background:#06b6d4;
+                            
+                            opacity:.18;
+                            
+                            z-index:-1;
+                            
+                            transition:.08s;
+                            
+                         }
+                         .glass:hover{
+
+                            transform:translateY(-6px);
+                            
+                            transition:.35s;
+                            
+                            box-shadow:
+                            
+                            0 20px 45px rgba(6,182,212,.18);
+                            
+                            }
+
+                            ::-webkit-scrollbar{
+
+                                width:10px;
+                                
+                                }
+                                
+                                ::-webkit-scrollbar-track{
+                                
+                                background:#050816;
+                                
+                                }
+                                
+                                ::-webkit-scrollbar-thumb{
+                                
+                                background:linear-gradient(#06b6d4,#8b5cf6);
+                                
+                                border-radius:999px;
+                                
+                                }
+                                #loader{
+
+                                    position:fixed;
+                                    
+                                    inset:0;
+                                    
+                                    background:#050816;
+                                    
+                                    display:flex;
+                                    
+                                    justify-content:center;
+                                    
+                                    align-items:center;
+                                    
+                                    z-index:99999;
+                                    
+                                    transition:.8s;
+                                    
+                                    }
+                                    
+                                    .loaderLogo{
+                                    
+                                    font-size:60px;
+                                    
+                                    font-weight:800;
+                                    
+                                    color:white;
+                                    
+                                    animation:pulse 1s infinite;
+                                    
+                                    }
+                                    
+                                    .loaderLogo span{
+                                    
+                                    color:#06b6d4;
+                                    
+                                    }
+                                    
+                                    @keyframes pulse{
+                                    
+                                    0%{
+                                    
+                                    transform:scale(.95);
+                                    
+                                    opacity:.6;
+                                    
+                                    }
+                                    
+                                    50%{
+                                    
+                                    transform:scale(1.05);
+                                    
+                                    opacity:1;
+                                    
+                                    }
+                                    
+                                    100%{
+                                    
+                                    transform:scale(.95);
+                                    
+                                    opacity:.6;
+                                    
+                                    }
+                                    
+                                    }
+                                    .titleAnimation{
+
+                                        animation:slideDown 1s;
+                                        
+                                        }
+                                        
+                                        @keyframes slideDown{
+                                        
+                                        from{
+                                        
+                                        opacity:0;
+                                        
+                                        transform:translateY(-60px);
+                                        
+                                        }
+                                        
+                                        to{
+                                        
+                                        opacity:1;
+                                        
+                                        transform:translateY(0);
+                                        
+                                        }
+                                        
+                                        }
+                                        .fadeUp{
+
+                                            opacity:0;
+                                            
+                                            transform:translateY(70px);
+                                            
+                                            transition:1s;
+                                            
+                                            }
+                                            
+                                            .showCard{
+                                            
+                                            opacity:1;
+                                            
+                                            transform:translateY(0);
+                                            
+                                            }
+                                            footer{
+
+                                                margin-left:100px;
+                                                
+                                                }
+                                                .light{
+
+                                                    background:#f8fafc !important;
+                                                    
+                                                    color:#0f172a !important;
+                                                    
+                                                    }
+                                                    
+                                                    .light .glass{
+                                                    
+                                                    background:rgba(255,255,255,.75);
+                                                    
+                                                    border:1px solid rgba(0,0,0,.08);
+                                                    
+                                                    color:#111827;
+                                                    
+                                                    }
+                                                    
+                                                    .light input{
+                                                    
+                                                    background:white;
+                                                    
+                                                    color:#111827;
+                                                    
+                                                    border:1px solid #d1d5db;
+                                                    
+                                                    }
+                                                    
+                                                    .light canvas{
+                                                    
+                                                    background:white;
+                                                    
+                                                    }
+
+                                                    button{
+
+                                                        cursor:pointer;
+                                                        
+                                                        }
+                                                        
+                                                        button:active{
+                                                        
+                                                        transform:scale(.98);
+                                                        
+                                                        }
+                                                        button{
+
+                                                            transition:.3s;
+                                                            
+                                                            }
+                                                            
+                                                            button:hover{
+                                                            
+                                                            transform:translateY(-5px);
+                                                            
+                                                            filter:brightness(1.08);
+                                                            
+                                                            }
+                                                            .glass{
+
+                                                                border-radius:30px;
+                                                                
+                                                                }
+                                                                canvas{
+
+                                                                    transition:.5s;
+                                                                    
+                                                                    }
+                                                                    
+                                                                    canvas:hover{
+                                                                    
+                                                                    transform:scale(1.01);
+                                                                    
+                                                                    }
+                                                                    @media (max-width:768px){
+
+                                                                        main{
+                                                                        
+                                                                        margin-left:0 !important;
+                                                                        
+                                                                        padding:20px;
+                                                                        
+                                                                        }
+                                                                        
+                                                                        .sidebar{
+                                                                        
+                                                                        display:none;
+                                                                        
+                                                                        }
+                                                                        
+                                                                        .grid{
+                                                                        
+                                                                        grid-template-columns:1fr !important;
+                                                                        
+                                                                        }
+                                                                        
+                                                                        .text-6xl{
+                                                                        
+                                                                        font-size:2.5rem !important;
+                                                                        
+                                                                        }
+                                                                        
+                                                                        footer{
+                                                                        
+                                                                        margin-left:0;
+                                                                        
+                                                                        text-align:center;
+                                                                        
+                                                                        }
+                                                                        
+                                                                        canvas{
+                                                                        
+                                                                        width:100% !important;
+                                                                        
+                                                                        height:auto !important;
+                                                                        
+                                                                        }
+                                                                        
+                                                                        }
+
+                                                                        .glass{
+
+                                                                            transition:.35s ease;
+                                                                            
+                                                                            }
+                                                                            
+                                                                            .glass:hover{
+                                                                            
+                                                                            transform:translateY(-8px);
+                                                                            
+                                                                            box-shadow:0 25px 60px rgba(6,182,212,.18);
+                                                                            
+                                                                            }
+
+                                                                            input{
+
+                                                                                border-radius:18px;
+                                                                                
+                                                                                padding:14px 18px;
+                                                                                
+                                                                                font-size:16px;
+                                                                                
+                                                                                }
+                                                                                
+                                                                                input:focus{
+                                                                                
+                                                                                outline:none;
+                                                                                
+                                                                                border-color:#06b6d4;
+                                                                                
+                                                                                box-shadow:0 0 20px rgba(6,182,212,.35);
+                                                                                
+                                                                                }
+
+                                                                                body.light::before {
+                                                                                    background: radial-gradient(circle at 15% 20%, rgba(192, 132, 252, 0.1) 0%, transparent 28%),
+                                                                                                radial-gradient(circle at 85% 10%, rgba(103, 232, 249, 0.1) 0%, transparent 32%),
+                                                                                                radial-gradient(circle at 50% 90%, rgba(37, 99, 235, 0.08) 0%, transparent 30%),
+                                                                                                #f8fafc !important;
+                                                                                }
+
+                                                                                body.light::after {
+                                                                                    background: #c084fc;
+                                                                                    opacity: 0.08;
+                                                                                }
